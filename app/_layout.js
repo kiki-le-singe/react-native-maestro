@@ -1,11 +1,30 @@
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 import { Provider } from "../context/auth";
 
 export default function Root() {
   return (
-    // Setup the auth context and render our layout inside of it.
     <Provider>
-      <Slot />
+      <Stack>
+        <Stack.Screen
+          name="index"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="details"
+          options={{
+            title: "Details",
+          }}
+        />
+        <Stack.Screen
+          name="(auth)/sign-in-modal"
+          options={{
+            headerShown: false,
+            presentation: "modal",
+          }}
+        />
+      </Stack>
     </Provider>
   );
 }
