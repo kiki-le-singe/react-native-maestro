@@ -1,17 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
+import { useAuth } from "../../context/auth";
 
-import { useAuth } from "../context/auth";
+export default function SignIn() {
+  const { signIn } = useAuth();
 
-export default function Index() {
-  const { signOut } = useAuth();
-
-  function handleSignOut() {
-    signOut();
+  function handleSignIn() {
+    signIn();
   }
 
   return (
     <View style={styles.container}>
-      <Text onPress={handleSignOut}>Sign Out</Text>
+      <Text onPress={handleSignIn}>Sign In</Text>
     </View>
   );
 }
