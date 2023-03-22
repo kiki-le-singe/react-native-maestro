@@ -25,7 +25,11 @@ export default function Index() {
         deserunt mollit anim id est laborum."
       </Text>
 
-      <View style={styles.tinyImagesContainer}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.tinyImagesContainer}
+      >
         <Image
           style={styles.tinyImage}
           source={{ uri: "https://picsum.photos/3000/2000" }}
@@ -34,7 +38,15 @@ export default function Index() {
           style={styles.tinyImage}
           source={{ uri: "https://picsum.photos/3000/2000" }}
         />
-      </View>
+        <Image
+          style={styles.tinyImage}
+          source={{ uri: "https://picsum.photos/3000/2000" }}
+        />
+        <Image
+          style={styles.tinyImage}
+          source={{ uri: "https://picsum.photos/3000/2000" }}
+        />
+      </ScrollView>
 
       <Text style={styles.text}>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -77,13 +89,13 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
   },
   tinyImagesContainer: {
-    flexDirection: "row",
+    backgroundColor: colors.BLACK,
     gap: 10,
+    marginVertical: 40,
   },
   tinyImage: {
     width: 200,
     height: 200,
-    resizeMode: "contain",
   },
   text: {
     paddingHorizontal: 20,
