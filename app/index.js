@@ -68,10 +68,11 @@ const styles = StyleSheet.create({
   userInfos: {
     color: colors.WHITE,
     fontWeight: "bold",
+    fontSize: 18,
   },
   name: {
     color: colors.GREEN,
-    fontSize: 18,
+    fontSize: 22,
   },
   signOut: {
     backgroundColor: colors.RED,
@@ -80,10 +81,12 @@ const styles = StyleSheet.create({
     padding: 10,
     color: colors.WHITE,
     fontWeight: "bold",
+    fontSize: 20,
   },
   link: {
     color: colors.BLUE,
     fontWeight: "bold",
-    marginVertical: 20,
+    marginVertical: 50,
+    fontSize: 20,
   },
 });
