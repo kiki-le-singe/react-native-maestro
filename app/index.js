@@ -36,9 +36,9 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      {isLoading ? (
-        <ActivityIndicator size="large" />
-      ) : user ? (
+      {isLoading && <ActivityIndicator size="large" />}
+
+      {user && (
         <>
           <View>
             <Text style={styles.userInfos}>
@@ -53,8 +53,6 @@ export default function Index() {
             Sign Out
           </Text>
         </>
-      ) : (
-        <Link href="/(auth)/sign-in-modal">Sign In</Link>
       )}
     </View>
   );
