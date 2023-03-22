@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   name: {
     color: colors.GREEN,
-    fontWeight: "bold",
+    fontSize: 18,
   },
   signOut: {
     backgroundColor: colors.RED,
