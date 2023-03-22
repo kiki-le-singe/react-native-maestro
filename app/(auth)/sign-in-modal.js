@@ -1,5 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Platform,
+  Keyboard,
+} from "react-native";
 import { Formik } from "formik";
 import { object, string } from "yup";
 
@@ -27,56 +37,66 @@ export default function SignIn() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.titleScreen}>Hello!</Text>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.inner}>
+          <Text style={styles.titleScreen}>Hello!</Text>
 
-      <Formik
-        initialValues={{ email: "", password: "" }}
-        validationSchema={signInValidationSchema}
-        onSubmit={onSubmit}
-      >
-        {({ handleChange, handleSubmit, values, errors }) => (
-          <>
-            <TextInput
-              style={styles.input(errors.email)}
-              onChangeText={handleChange("email")}
-              value={values.email}
-              placeholder="Email"
-              placeholderTextColor={colors.BLUE}
-              autoCapitalize="none"
-              autoComplete="off"
-            />
-            <TextInput
-              style={styles.input(errors.password)}
-              onChangeText={handleChange("password")}
-              value={values.password}
-              placeholder="Password"
-              placeholderTextColor={colors.BLUE}
-              autoCapitalize="none"
-              autoComplete="off"
-              secureTextEntry
-            />
-            <Button
-              title="Sign In"
-              color={colors.GREEN}
-              onPress={handleSubmit}
-            />
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={signInValidationSchema}
+            onSubmit={onSubmit}
+          >
+            {({ handleChange, handleSubmit, values, errors }) => (
+              <>
+                <TextInput
+                  style={styles.input(errors.email)}
+                  onChangeText={handleChange("email")}
+                  value={values.email}
+                  placeholder="Email"
+                  placeholderTextColor={colors.BLUE}
+                  autoCapitalize="none"
+                  autoComplete="off"
+                />
+                <TextInput
+                  style={styles.input(errors.password)}
+                  onChangeText={handleChange("password")}
+                  value={values.password}
+                  placeholder="Password"
+                  placeholderTextColor={colors.BLUE}
+                  autoCapitalize="none"
+                  autoComplete="off"
+                  secureTextEntry
+                />
+                <Button
+                  title="Sign In"
+                  color={colors.GREEN}
+                  onPress={handleSubmit}
+                />
 
-            <Text style={styles.error}>{errors.email}</Text>
-            <Text style={styles.error}>{errors.password}</Text>
-          </>
-        )}
-      </Formik>
-    </View>
+                <Text style={styles.error}>{errors.email}</Text>
+                <Text style={styles.error}>{errors.password}</Text>
+              </>
+            )}
+          </Formik>
+        </View>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.BLACK,
+  },
+  inner: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.BLACK,
   },
   titleScreen: {
     fontSize: 34,
