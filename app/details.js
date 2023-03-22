@@ -28,7 +28,8 @@ export default function Index() {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.tinyImagesContainer}
+        style={styles.tinyImagesContainer}
+        contentContainerStyle={styles.tinyImagesContentContainer}
       >
         <Image
           style={styles.tinyImage}
@@ -90,8 +91,11 @@ const styles = StyleSheet.create({
   },
   tinyImagesContainer: {
     backgroundColor: colors.BLACK,
-    gap: 10,
     marginVertical: 40,
+  },
+  tinyImagesContentContainer: {
+    gap: 20,
+    padding: 10,
   },
   tinyImage: {
     width: 200,
