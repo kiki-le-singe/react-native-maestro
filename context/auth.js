@@ -13,10 +13,10 @@ export function Provider(props) {
   return (
     <AuthContext.Provider
       value={{
-        signIn: () =>
+        signIn: (values) =>
           setAuth({
             name: "Foo",
-            email: "foo@bar.com",
+            ...values,
           }),
         signOut: () => setAuth(null),
         user,
