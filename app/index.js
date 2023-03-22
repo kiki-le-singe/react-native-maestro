@@ -4,6 +4,7 @@ import { Link, useNavigation } from "expo-router";
 
 import { useAuth } from "../context/auth";
 import sleep from "../utils/sleep";
+import colors from "../utils/colors";
 
 export default function Index() {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -64,26 +65,26 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(51, 51, 51, 0.9)",
+    backgroundColor: colors.BLACK_II,
   },
   userInfos: {
-    color: "white",
+    color: colors.WHITE,
     fontWeight: "bold",
   },
   name: {
-    color: "rgba(210, 238, 130, 1)",
+    color: colors.GREEN,
     fontWeight: "bold",
   },
   signOut: {
-    backgroundColor: "rgba(243, 83, 105, 1)",
+    backgroundColor: colors.RED,
     borderRadius: 10,
     overflow: "hidden",
     padding: 10,
-    color: "white",
+    color: colors.WHITE,
     fontWeight: "bold",
   },
   link: {
-    color: "rgba(13, 180, 185, 1)",
+    color: colors.BLUE,
     fontWeight: "bold",
     marginVertical: 20,
   },

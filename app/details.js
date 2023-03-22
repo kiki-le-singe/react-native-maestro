@@ -1,5 +1,7 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
+import colors from "../utils/colors";
+
 export default function Index() {
   return (
     <ScrollView
@@ -56,7 +58,7 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "rgba(51, 51, 51, 0.9)" },
+  container: { flex: 1, backgroundColor: colors.BLACK_II },
   contentContainer: {
     justifyContent: "center",
     alignItems: "center",
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingHorizontal: 20,
-    color: "white",
+    color: colors.WHITE,
     fontWeight: "bold",
   },
 });

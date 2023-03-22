@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { Provider } from "../context/auth";
+import colors from "../utils/colors";
 
 export default function Root() {
   return (
@@ -17,10 +18,10 @@ export default function Root() {
           options={{
             headerShadowVisible: true,
             headerStyle: {
-              backgroundColor: "rgba(51, 51, 51, 1)",
+              backgroundColor: colors.BLACK,
             },
-            headerTitleStyle: { color: "white" },
-            headerTintColor: "rgba(13, 180, 185, 1)",
+            headerTitleStyle: { color: colors.WHITE },
+            headerTintColor: colors.BLUE,
             title: "Details",
             headerShown: true,
           }}

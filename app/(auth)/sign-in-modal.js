@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../../context/auth";
+import colors from "../../utils/colors";
 
 export default function SignIn() {
   const { signIn } = useAuth();
@@ -20,6 +21,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(51, 51, 51, 0.9)",
+    backgroundColor: colors.BLACK,
   },
 });
