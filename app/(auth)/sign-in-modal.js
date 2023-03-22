@@ -10,7 +10,7 @@ import {
   Platform,
   Keyboard,
 } from "react-native";
-import { Formik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { object, string } from "yup";
 
 import { useAuth } from "../../context/auth";
@@ -50,10 +50,10 @@ export default function SignIn() {
             validationSchema={signInValidationSchema}
             onSubmit={onSubmit}
           >
-            {({ handleChange, handleSubmit, values, errors }) => (
+            {({ handleChange, handleSubmit, values, errors, touched }) => (
               <>
                 <TextInput
-                  style={styles.input(errors.email)}
+                  style={styles.input(errors.email && touched.email)}
                   onChangeText={handleChange("email")}
                   value={values.email}
                   placeholder="Email"
@@ -62,7 +62,7 @@ export default function SignIn() {
                   autoComplete="off"
                 />
                 <TextInput
-                  style={styles.input(errors.password)}
+                  style={styles.input(errors.password && touched.password)}
                   onChangeText={handleChange("password")}
                   value={values.password}
                   placeholder="Password"
@@ -77,8 +77,13 @@ export default function SignIn() {
                   onPress={handleSubmit}
                 />
 
-                <Text style={styles.error}>{errors.email}</Text>
-                <Text style={styles.error}>{errors.password}</Text>
+                {errors.email && touched.email ? (
+                  <Text style={styles.error}>{errors.email}</Text>
+                ) : null}
+
+                {errors.password && touched.password ? (
+                  <Text style={styles.error}>{errors.password}</Text>
+                ) : null}
               </>
             )}
           </Formik>
@@ -103,12 +108,12 @@ const styles = StyleSheet.create({
     color: colors.WHITE,
     marginBottom: 10,
   },
-  input: (error) => ({
+  input: (isNotValidate) => ({
     width: 200,
     height: 40,
     margin: 12,
     borderWidth: 1,
-    borderColor: error ? colors.RED : colors.BLUE,
+    borderColor: isNotValidate ? colors.RED : colors.BLUE,
     borderRadius: 8,
     padding: 10,
     color: colors.WHITE,
