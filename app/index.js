@@ -40,7 +40,9 @@ export default function Index() {
       ) : user ? (
         <>
           <View>
-            <Text style={styles.userInfos}>Hello {user.name}</Text>
+            <Text style={styles.userInfos}>
+              Hello <Text style={styles.name}>{user.name}</Text>
+            </Text>
             <Text style={styles.userInfos}>{user.email}</Text>
           </View>
           <Link href="/details" style={styles.link}>
@@ -62,13 +64,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "rgba(51, 51, 51, 0.9)",
   },
   userInfos: {
-    color: "green",
+    color: "white",
+    fontWeight: "bold",
+  },
+  name: {
+    color: "rgba(210, 238, 130, 1)",
     fontWeight: "bold",
   },
   signOut: {
-    backgroundColor: "#fa6945",
+    backgroundColor: "rgba(243, 83, 105, 1)",
     borderRadius: 10,
     overflow: "hidden",
     padding: 10,
@@ -76,7 +83,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   link: {
-    color: "#006edc",
+    color: "rgba(13, 180, 185, 1)",
     fontWeight: "bold",
     marginVertical: 20,
   },
