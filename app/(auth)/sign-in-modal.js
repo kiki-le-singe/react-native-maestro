@@ -5,7 +5,7 @@ import {
   TextInput,
   Button,
   KeyboardAvoidingView,
-  TouchableWithoutFeedback,
+  View,
   Platform,
   Keyboard,
 } from "react-native";
@@ -72,6 +72,7 @@ export default function SignIn() {
   }) => (
     <>
       <TextInput
+        testID="EmailTextInput"
         style={styles.input(errors.email && touched.email)}
         onChangeText={handleChange("email")}
         value={values.email}
@@ -81,6 +82,7 @@ export default function SignIn() {
         autoComplete="off"
       />
       <TextInput
+        testID="PasswordTextInput"
         style={styles.input(errors.password && touched.password)}
         onChangeText={handleChange("password")}
         value={values.password}
@@ -118,7 +120,7 @@ export default function SignIn() {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
     >
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container} onTouchStart={Keyboard.dismiss}>
         <Animated.View style={[styles.inner, animatedStyle]}>
           <Text testID="GreetingsText" style={styles.titleScreen}>
             Hello!
@@ -132,7 +134,7 @@ export default function SignIn() {
             {renderForm}
           </Formik>
         </Animated.View>
-      </TouchableWithoutFeedback>
+      </View>
     </KeyboardAvoidingView>
   );
 }
