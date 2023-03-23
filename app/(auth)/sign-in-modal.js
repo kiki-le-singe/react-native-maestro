@@ -106,11 +106,15 @@ export default function SignIn() {
       />
 
       {errors.email && touched.email ? (
-        <Text style={styles.error}>{errors.email}</Text>
+        <Text testID="EmailTextError" style={styles.error}>
+          {errors.email}
+        </Text>
       ) : null}
 
       {errors.password && touched.password ? (
-        <Text style={styles.error}>{errors.password}</Text>
+        <Text testID="PasswordTextError" style={styles.error}>
+          {errors.password}
+        </Text>
       ) : null}
     </>
   );
