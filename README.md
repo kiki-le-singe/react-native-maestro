@@ -1,15 +1,73 @@
-# Expo Router Example
+# Mobile UI testing with React Native and Maestro
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+## Introduction
 
-## 🚀 How to use
+I started this project mainly for fun and to develop my mobile UI testing skills. After reading the [Documentation for Maestro](https://maestro.mobile.dev/) and [Maestro with React Native](https://maestro.mobile.dev/platform-support/react-native), I found it seemed easy to implement, simple and effective. So... Let's go! :D
+I created a React Native app built with Expo to simply this part. The aim of this project is `Maestro`.
+Enjoy it! :)
 
-```sh
-npx create-react-native-app -t with-router
+This app has three screens:
+
+- A sign in interface with two fields, email and password. After clicking the sign in button, if the form is valid `(a valid email and password)` we'll see the next screen.
+- A simple screen with greetings and email user, a link to another screen and a sign out button.
+- A scrollview screen with some texts and images. It's also possible to go back to the previous screen.
+
+<img src="./docs/app.gif" alt="React Native Maestro app" />
+
+## Installation
+
+### React Native Maestro
+
+```shell
+$ git clone https://github.com/kiki-le-singe/react-native-maestro.git <name>
+$ cd <name>
+$ npm install
 ```
 
-## 📝 Notes
+### Maestro
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
-- [Request for Comments](https://github.com/expo/router/discussions/1)
+```shell
+$ curl -Ls "https://get.maestro.mobile.dev" | bash
+$ maestro -v
+```
+
+> Only for iOS: [Connecting to Your Device](https://maestro.mobile.dev/getting-started/installing-maestro#connecting-to-your-device)
+
+```shell
+$ brew tap facebook/fb
+$ brew install facebook/fb/idb-companion
+```
+
+See the official documentation: [Installing Maestro](https://maestro.mobile.dev/getting-started/installing-maestro)
+
+## Run
+
+```bash
+$ npm start
+$ npm run ios or android
+```
+
+## Maestro tests
+
+The tests are in the `maestro` directory. You can run them locally in your iOS simulator or Android emulator. At the moment, Maestro does not support real iOS devices. See [Installing Maestro](https://maestro.mobile.dev/getting-started/installing-maestro) and [Connecting to Your Device](https://maestro.mobile.dev/getting-started/installing-maestro#connecting-to-your-device)
+
+You can run the tests in CI with `Maestro Cloud`. See [Running Flows on CI](https://maestro.mobile.dev/getting-started/running-flows-on-ci).
+
+### Running tests
+
+```bash
+# run single test
+$ maestro test maestro/[fileName].yaml
+# run single test with external parameters
+$ maestro test -e EMAIL="foo@gmail.com" -e PASSWORD=Qwerty12345@ expo-maestro/[fileName].yaml
+```
+
+<img src="./docs/simple-maestro-flow.gif" alt="Simple Maestro flow" width="800" height="800" />
+
+## Resources
+
+- [Maestro Documentation](https://maestro.mobile.dev)
+- [Maestro GitHub Repository](https://github.com/mobile-dev-inc/maestro)
+- [Maestro with React Native](https://maestro.mobile.dev/platform-support/react-native)
+- [Maestro Cloud Documentation](https://cloud.mobile.dev)
+- [A great and complete introduction to Maestro with React Native](https://dev.to/b42/test-your-react-native-app-with-maestro-5bfj)
