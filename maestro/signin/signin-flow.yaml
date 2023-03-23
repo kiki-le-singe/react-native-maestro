@@ -1,0 +1,13 @@
+appId: host.exp.Exponent
+---
+- launchApp
+# needed to open app in expo
+- openLink: exp://127.0.0.1:19000
+- assertVisible:
+    id: "GreetingsText"
+- assertVisible:
+    id: "EmailTextInput"
+- assertVisible:
+    id: "PasswordTextInput"
+- assertVisible:
+    id: "signInButton"
