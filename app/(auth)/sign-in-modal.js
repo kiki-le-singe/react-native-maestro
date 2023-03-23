@@ -91,6 +91,7 @@ export default function SignIn() {
         secureTextEntry
       />
       <Button
+        testID="SignInButton"
         title="Sign In"
         color={colors.GREEN}
         onPress={(e) => {
@@ -119,7 +120,9 @@ export default function SignIn() {
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <Animated.View style={[styles.inner, animatedStyle]}>
-          <Text style={styles.titleScreen}>Hello!</Text>
+          <Text testID="GreetingsText" style={styles.titleScreen}>
+            Hello!
+          </Text>
 
           <Formik
             initialValues={{ email: "", password: "" }}
