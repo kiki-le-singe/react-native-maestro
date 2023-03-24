@@ -58,9 +58,9 @@ You can run the tests in CI with `Maestro Cloud`. See [Running Flows on CI](http
 ```bash
 # run single test
 $ maestro test maestro/[fileName].yaml
-# run single test with external parameters
-$ maestro test -e EMAIL="foo@gmail.com" -e PASSWORD=Qwerty12345@ maestro/[fileName].yaml
 ```
+
+<br />
 
 ```bash
 $ maestro test maestro/simple-flow.yaml
@@ -68,11 +68,23 @@ $ maestro test maestro/simple-flow.yaml
 
 <img src="./docs/simple-maestro-flow.gif" alt="Simple Maestro flow" width="800" height="800" />
 
+<br /><br />
+
 ```bash
 $ maestro test maestro/signin/signin-errors-flow.yaml
 ```
 
 <img src="./docs/signin-errors-flow.gif" alt="Sign in errors Maestro flow" width="800" height="800" />
+
+<br /><br />
+
+```bash
+$ maestro test maestro/signin/signin-success-flow.yaml
+```
+
+<img src="./docs/signin-success-flow.gif" alt="Sign in success Maestro flow" width="800" height="800" />
+
+<br />
 
 > Sometimes you could see this error: [Failed to reach out XCUITest Server](https://github.com/mobile-dev-inc/maestro/issues/880)... Maybe your component is not reachable, so you probably check your code. Sometimes the CLI just seems a little capricious... So just wait a few secondes... And it perfectly works! :D
 
