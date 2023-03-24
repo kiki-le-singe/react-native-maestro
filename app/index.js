@@ -35,7 +35,7 @@ export default function Index() {
   }
 
   return (
-    <View style={styles.container}>
+    <View testID="HomeScreen" style={styles.container}>
       {isLoading && <ActivityIndicator size="large" />}
 
       {user && (

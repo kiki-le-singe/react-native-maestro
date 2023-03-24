@@ -10,11 +10,12 @@ export default function Index() {
       contentContainerStyle={styles.contentContainer}
     >
       <Image
+        testID="Image"
         style={styles.image}
         source={{ uri: "https://picsum.photos/3000/2000" }}
       />
 
-      <Text style={styles.text}>
+      <Text testID="Text" style={styles.text}>
         "<Text style={styles.italic}>Lorem ipsum</Text> dolor sit amet,
         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud{" "}
@@ -27,6 +28,7 @@ export default function Index() {
       </Text>
 
       <ScrollView
+        testID="ScrollViewImages"
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.tinyImagesContainer}
@@ -68,7 +70,7 @@ export default function Index() {
         source={{ uri: "https://picsum.photos/3000/2000" }}
       />
 
-      <Text style={styles.text}>
+      <Text testID="LastText" style={styles.text}>
         "<Text style={styles.link}>Lorem ipsum</Text> dolor sit{" "}
         <Text style={styles.italic}>amet</Text>, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et{" "}

@@ -1,0 +1,17 @@
+appId: host.exp.Exponent
+---
+- runFlow:
+    file: ../home/home-flow.yaml
+- assertVisible:
+    id: "Image"
+- assertVisible:
+    id: "Text"
+- assertVisible:
+    id: "ScrollViewImages"
+- scrollUntilVisible:
+    element:
+      id: "LastText"
+- tapOn: # After Back link is pressed
+    text: "Back"
+- assertVisible: # We are redirect to the previous(Home) screen
+    id: "HomeScreen"
