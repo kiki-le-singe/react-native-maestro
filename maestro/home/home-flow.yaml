@@ -6,7 +6,7 @@ appId: host.exp.Exponent
     id: "DetailsScreenLink"
 - assertVisible:
     id: "SignOutButton"
-- tapOn: # After details screen link is clicked
+- tapOn: # After details screen link is pressed
     id: "DetailsScreenLink"
 - assertVisible: # We are redirect to the details screen
     id: "DetailsScreen"

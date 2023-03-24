@@ -6,7 +6,7 @@ appId: host.exp.Exponent
     id: "EmailTextError"
 - assertNotVisible:
     id: "PasswordTextError"
-- tapOn: # After sign in button is clicked
+- tapOn: # After sign in button is pressed
     id: "SignInButton"
 # We got two errors
 - assertVisible:

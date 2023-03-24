@@ -12,7 +12,7 @@ appId: host.exp.Exponent
 - tapOn:
     id: "PasswordTextInput"
 - inputText: "123"
-- tapOn: # After sign in button is clicked
+- tapOn: # After sign in button is pressed
     id: "SignInButton"
 # We got two errors
 - assertVisible:
