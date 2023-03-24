@@ -66,7 +66,7 @@ $ maestro test maestro/[fileName].yaml
 $ maestro test maestro/simple-flow.yaml
 ```
 
-<img src="./docs/simple-maestro-flow.gif" alt="Simple Maestro flow" width="800" height="800" />
+<img src="./docs/simple-maestro-flow.gif" alt="Simple Maestro flow" width="800" height="600" />
 
 <br /><br />
 
@@ -74,7 +74,7 @@ $ maestro test maestro/simple-flow.yaml
 $ maestro test maestro/signin/signin-errors-flow.yaml
 ```
 
-<img src="./docs/signin-errors-flow.gif" alt="Sign in errors Maestro flow" width="800" height="800" />
+<img src="./docs/signin-errors-flow.gif" alt="Sign in errors Maestro flow" width="800" height="600" />
 
 <br /><br />
 
@@ -82,7 +82,7 @@ $ maestro test maestro/signin/signin-errors-flow.yaml
 $ maestro test maestro/signin/signin-success-flow.yaml
 ```
 
-<img src="./docs/signin-success-flow.gif" alt="Sign in success Maestro flow" width="800" height="800" />
+<img src="./docs/signin-success-flow.gif" alt="Sign in success Maestro flow" width="800" height="600" />
 
 <br />
 
