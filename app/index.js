@@ -41,15 +41,19 @@ export default function Index() {
       {user && (
         <>
           <View>
-            <Text style={styles.userInfos}>
+            <Text testID="GreetingsText" style={styles.userInfos}>
               Hello <Text style={styles.name}>{user.name}</Text>
             </Text>
             <Text style={styles.userInfos}>{user.email}</Text>
           </View>
-          <Link href="/details" style={styles.link}>
+          <Link testID="DetailsScreenLink" href="/details" style={styles.link}>
             Go to Details screen
           </Link>
-          <Text style={styles.signOut} onPress={handleSignOut}>
+          <Text
+            testID="SignOutButton"
+            style={styles.signOut}
+            onPress={handleSignOut}
+          >
             Sign Out
           </Text>
         </>

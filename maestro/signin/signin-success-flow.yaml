@@ -1,0 +1,22 @@
+appId: host.exp.Exponent
+---
+- runFlow:
+    file: signin-flow.yaml
+- assertNotVisible:
+    id: "EmailTextError"
+- assertNotVisible:
+    id: "PasswordTextError"
+- tapOn:
+    id: "EmailTextInput"
+- inputText: "foo.bar@gmail.com"
+- tapOn:
+    id: "PasswordTextInput"
+- inputText: "QwertY123@"
+- tapOn:
+    id: "SignInButton"
+- assertVisible:
+    id: "GreetingsText"
+- assertVisible:
+    id: "DetailsScreenLink"
+- assertVisible:
+    id: "SignOutButton"
