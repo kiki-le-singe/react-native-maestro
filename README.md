@@ -84,6 +84,14 @@ $ maestro test maestro/signin/signin-success-flow.yaml
 
 <img src="./docs/signin-success-flow.gif" alt="Sign in success Maestro flow" width="800" height="600" />
 
+<br /><br />
+
+```bash
+$ maestro test maestro/home/home-flow.yaml
+```
+
+<img src="./docs/home-flow.gif" alt="Home flow" width="800" height="600" />
+
 <br />
 
 > Sometimes you could see this error: [Failed to reach out XCUITest Server](https://github.com/mobile-dev-inc/maestro/issues/880)... Maybe your component is not reachable, so you probably check your code. Sometimes the CLI just seems a little capricious... So just wait a few secondes... And it perfectly works! :D
