@@ -12,8 +12,9 @@ appId: host.exp.Exponent
 - tapOn:
     id: "PasswordTextInput"
 - inputText: "123"
-- tapOn:
+- tapOn: # After sign in button is clicked
     id: "SignInButton"
+# We got two errors
 - assertVisible:
     id: "EmailTextError"
 - assertVisible:

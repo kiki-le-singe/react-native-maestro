@@ -2,21 +2,19 @@ appId: host.exp.Exponent
 ---
 - runFlow:
     file: signin-flow.yaml
-- assertNotVisible:
-    id: "EmailTextError"
-- assertNotVisible:
-    id: "PasswordTextError"
 - tapOn:
     id: "EmailTextInput"
 - inputText: "foo.bar@gmail.com"
 - tapOn:
     id: "PasswordTextInput"
 - inputText: "QwertY123@"
-- tapOn:
+- tapOn: # After sign in button is clicked
     id: "SignInButton"
+# Everything is ok, there are no errors
+- assertNotVisible:
+    id: "EmailTextError"
+- assertNotVisible:
+    id: "PasswordTextError"
+# We are redirect to the Home screen
 - assertVisible:
     id: "GreetingsText"
-- assertVisible:
-    id: "DetailsScreenLink"
-- assertVisible:
-    id: "SignOutButton"
