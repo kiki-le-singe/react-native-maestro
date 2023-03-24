@@ -1,0 +1,12 @@
+appId: host.exp.Exponent
+---
+- runFlow:
+    file: ../signin/signin-success-flow.yaml
+- assertVisible:
+    id: "DetailsScreenLink"
+- assertVisible:
+    id: "SignOutButton"
+- tapOn: # After details screen link is clicked
+    id: "DetailsScreenLink"
+- assertVisible: # We are redirect to the details screen
+    id: "DetailsScreen"

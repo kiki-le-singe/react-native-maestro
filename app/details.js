@@ -5,6 +5,7 @@ import colors from "../utils/colors";
 export default function Index() {
   return (
     <ScrollView
+      testID="DetailsScreen"
       style={styles.container}
       contentContainerStyle={styles.contentContainer}
     >
